@@ -83,6 +83,14 @@ const FALLBACK_SUBJECTS = [
 const ROLES = ['student', 'parent', 'teacher', 'other'];
 const ROLE_LABELS = { student: 'Học sinh', parent: 'Phụ huynh', teacher: 'Giáo viên', other: 'Khác' };
 
+const getInitialSlides = () => {
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth <= 850) return 1;
+    if (window.innerWidth <= 1024) return 2;
+  }
+  return 3;
+};
+
 const reviewSliderSettings = {
   dots: true,
   arrows: true,
@@ -104,15 +112,7 @@ const reviewSliderSettings = {
       }
     },
     {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-      }
-    },
-    {
-      breakpoint: 480,
+      breakpoint: 850,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -142,6 +142,13 @@ export default function LandingPage({ onGoLogin }) {
   const [openFaq, setOpenFaq] = useState(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [previewReview, setPreviewReview] = useState(null);
+  const [slidesToShow, setSlidesToShow] = useState(getInitialSlides);
+
+  useEffect(() => {
+    const handleResize = () => setSlidesToShow(getInitialSlides());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const formatGradesBadge = gradesList => {
     const grades = Array.isArray(gradesList) && gradesList.length
@@ -502,7 +509,7 @@ export default function LandingPage({ onGoLogin }) {
 
           {reviews.length > 0 ? (
             <div className="lp-review-slider">
-              <Slider {...reviewSliderSettings}>
+              <Slider key={`slider-${slidesToShow}`} {...reviewSliderSettings} slidesToShow={slidesToShow}>
                 {reviews.map(r => (
                   <div key={r._id}>
                     <article className="lp-review-card" >

@@ -3546,43 +3546,91 @@
   box-shadow: 0 2px 8px rgba(14, 165, 233, 0.35);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .lp-reviews-slider-wrap {
-    padding: 0 8px;
+    padding: 0 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .lp-review-slider {
+    margin: 0 0 28px !important;
+  }
+  .lp-review-slider .slick-slide > div {
+    padding: 0 4px;
   }
   .lp-slider-prev,
   .lp-review-slider .slick-prev {
-    left: -8px;
-    width: 36px;
-    height: 36px;
+    left: -12px;
+    width: 32px;
+    height: 32px;
     z-index: 10;
   }
   .lp-slider-next,
   .lp-review-slider .slick-next {
-    right: -8px;
-    width: 36px;
-    height: 36px;
+    right: -12px;
+    width: 32px;
+    height: 32px;
     z-index: 10;
   }
   .lp-review-card {
     height: auto !important;
-    min-height: 220px !important;
-    padding: 20px 16px !important;
+    min-height: 160px !important;
+    padding: 16px 14px 14px !important;
+    border-radius: 16px !important;
+  }
+  .lp-quote-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .lp-review-top {
+    margin-bottom: 8px !important;
+  }
+  .lp-review-stars svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .lp-review-content {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+    -webkit-line-clamp: 4 !important;
+  }
+  .lp-review-author {
+    gap: 8px !important;
+  }
+  .lp-review-avatar {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 11px !important;
+  }
+  .lp-review-author b {
+    font-size: 12px !important;
+  }
+  .lp-review-author small {
+    font-size: 10.5px !important;
   }
 }
 
 @media (max-width: 480px) {
+  .lp-reviews-slider-wrap {
+    padding: 0 12px;
+    max-width: 100%;
+  }
   .lp-slider-prev,
   .lp-review-slider .slick-prev {
-    left: -4px;
-    width: 34px;
-    height: 34px;
+    left: -8px;
+    width: 30px;
+    height: 30px;
   }
   .lp-slider-next,
   .lp-review-slider .slick-next {
-    right: -4px;
-    width: 34px;
-    height: 34px;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+  }
+  .lp-review-card {
+    min-height: 150px !important;
+    padding: 14px 12px !important;
   }
 }
 
