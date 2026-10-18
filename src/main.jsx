@@ -1,0 +1,1 @@
+import{createRoot}from'react-dom/client';import App from'./App';import ToastContainer from'./components/Toast';import ConfirmModalContainer from'./components/ConfirmModal';import'./styles.css';createRoot(document.getElementById('root')).render(<><App/><ToastContainer/><ConfirmModalContainer/></>);

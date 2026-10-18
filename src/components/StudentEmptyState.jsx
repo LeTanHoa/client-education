@@ -1,0 +1,2 @@
+import{Sparkles}from'lucide-react';
+export default function StudentEmptyState({icon,title,description,action,onAction,compact=false}){return <section className={`student-empty-state${compact?' compact':''}`} role="status"><div className="student-empty-art"><span className="empty-sparkle sparkle-one">✦</span><span className="empty-icon">{icon||<Sparkles size={31}/>}</span><span className="empty-sparkle sparkle-two">✦</span></div><h2>{title}</h2><p>{description}</p>{action&&<button className="primary" onClick={onAction}>{action}</button>}</section>}
