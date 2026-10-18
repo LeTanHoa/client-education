@@ -4298,3 +4298,305 @@
   box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.18);
 }
 
+/* ========================================================
+   COMPREHENSIVE MOBILE NAVIGATION & RESPONSIVE COMPLETION
+   ======================================================== */
+
+/* Sidebar Mobile & Desktop Alignment */
+.sidebar-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.sidebar-mobile-close {
+  display: none;
+  background: #f1f5f9;
+  border: 0;
+  border-radius: 8px;
+  padding: 6px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.sidebar-mobile-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+.sidebar-mobile-backdrop {
+  display: none;
+}
+.workspace-mobile-menu-btn {
+  display: none;
+}
+.workspace-mobile-brand {
+  display: none;
+}
+.student-bottom-nav {
+  display: none;
+}
+
+/* Responsive adjustments for Mobile & Tablets (<= 850px) */
+@media (max-width: 850px) {
+  .workspace {
+    padding-left: 0 !important;
+  }
+  .student-shell {
+    padding-left: 0 !important;
+  }
+  .student-shell .sidebar {
+    display: none !important;
+  }
+
+  /* Workspace Off-Canvas Drawer */
+  .workspace-mobile-menu-btn {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1.5px solid #e2e8f0;
+    background: #ffffff;
+    color: #334155;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .workspace-mobile-brand {
+    display: flex;
+    align-items: center;
+  }
+  .workspace-mobile-brand .brand {
+    font-size: 18px;
+    gap: 8px;
+  }
+  .workspace-mobile-brand .logo {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    border-radius: 9px;
+  }
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .topbar {
+    padding: 0 16px !important;
+    height: 64px !important;
+  }
+  .user-greeting {
+    font-size: 12.5px;
+    color: #475569;
+  }
+
+  .workspace .sidebar {
+    display: flex !important;
+    position: fixed !important;
+    inset: 0 auto 0 0 !important;
+    width: 270px !important;
+    background: #ffffff !important;
+    z-index: 1200 !important;
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 6px 0 30px rgba(15, 23, 42, 0.16);
+    overflow-y: auto;
+    padding: 20px 14px;
+  }
+  .workspace .sidebar.mobile-open {
+    transform: translateX(0) !important;
+  }
+  .sidebar-mobile-close {
+    display: grid;
+    place-items: center;
+  }
+  .sidebar-mobile-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(2.5px);
+    z-index: 1199;
+  }
+}
+
+/* Student Mobile Bottom Navigation (<= 768px) */
+@media (max-width: 768px) {
+  .student-page {
+    padding-bottom: 74px !important;
+  }
+  .student-bottom-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #ffffff;
+    border-top: 1.5px solid #e2e8f0;
+    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.06);
+    z-index: 999;
+    align-items: stretch;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+  .student-bottom-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    background: transparent;
+    border: 0;
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 6px 2px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+  }
+  .student-bottom-tab:hover,
+  .student-bottom-tab.active {
+    color: #0284c7;
+  }
+  .student-bottom-pill {
+    position: absolute;
+    top: 0;
+    width: 26px;
+    height: 3px;
+    border-radius: 0 0 3px 3px;
+    background: #0284c7;
+  }
+
+  /* Page Headings Stack */
+  .page-heading {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+  .page-heading > div {
+    width: 100%;
+  }
+  .page-heading > button,
+  .page-heading .primary,
+  .page-heading .outline {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Dashboard grids */
+  .dashboard {
+    padding: 20px 14px !important;
+  }
+  .stats, .dashboard-grid, .settings-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Map and roadmap */
+  .journey-roadmap {
+    gap: 12px !important;
+  }
+  .journey-lesson-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    padding: 18px 16px !important;
+  }
+  .jlc-action {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .map-last-attempt {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+  .map-score-badge {
+    align-self: flex-start !important;
+  }
+  .map-filter-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+  .map-filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Data table mobile responsiveness */
+  .data-table-toolbar {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  .data-table-search {
+    width: 100% !important;
+  }
+}
+
+/* Extra Compact Screens (<= 480px) */
+@media (max-width: 480px) {
+  .student-head {
+    height: 60px !important;
+    padding: 0 12px !important;
+    gap: 6px !important;
+  }
+  .student-head-brand-mobile b {
+    display: none !important;
+  }
+  .stat-pill {
+    padding: 4px 6px !important;
+    gap: 4px !important;
+    font-size: 11px !important;
+  }
+  .pill-label {
+    display: none !important;
+  }
+  .pill-val {
+    font-size: 11.5px !important;
+  }
+  .student-avatar {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 11px !important;
+  }
+
+  /* Modals */
+  .modal-backdrop {
+    padding: 10px !important;
+  }
+  .modal {
+    padding: 20px 14px !important;
+    border-radius: 18px !important;
+    max-height: calc(100vh - 20px) !important;
+  }
+  .modal h2 {
+    font-size: 17px !important;
+  }
+
+  /* Quiz page header */
+  .qz-head {
+    padding: 0 12px !important;
+  }
+  .qz-head-center b {
+    font-size: 13px !important;
+  }
+  .qz-question {
+    font-size: 18px !important;
+  }
+  .qz-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .qz-footer button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+
