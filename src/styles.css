@@ -3547,17 +3547,42 @@
 }
 
 @media (max-width: 768px) {
+  .lp-reviews-slider-wrap {
+    padding: 0 8px;
+  }
   .lp-slider-prev,
   .lp-review-slider .slick-prev {
-    left: -10px;
-    width: 38px;
-    height: 38px;
+    left: -8px;
+    width: 36px;
+    height: 36px;
+    z-index: 10;
   }
   .lp-slider-next,
   .lp-review-slider .slick-next {
-    right: -10px;
-    width: 38px;
-    height: 38px;
+    right: -8px;
+    width: 36px;
+    height: 36px;
+    z-index: 10;
+  }
+  .lp-review-card {
+    height: auto !important;
+    min-height: 220px !important;
+    padding: 20px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .lp-slider-prev,
+  .lp-review-slider .slick-prev {
+    left: -4px;
+    width: 34px;
+    height: 34px;
+  }
+  .lp-slider-next,
+  .lp-review-slider .slick-next {
+    right: -4px;
+    width: 34px;
+    height: 34px;
   }
 }
 
