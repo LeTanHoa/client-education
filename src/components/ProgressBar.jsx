@@ -6,3 +6,4 @@ export default function ProgressBar({ value = 0, color = 'green' }) {
     </div>
   );
 }
+
