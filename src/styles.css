@@ -4624,4 +4624,105 @@
   }
 }
 
+/* ========================================================
+   FIX INPUT EXPANSION & MOBILE AUTO-ZOOM (Phình to ô input)
+   ======================================================== */
+input,
+select,
+textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  /* Font size >= 16px prevents iOS Safari and Android Chrome from auto-zooming the viewport on focus */
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea,
+  .form input:not([type="checkbox"]):not([type="radio"]),
+  .form select,
+  .field select,
+  .field input:not([type="checkbox"]):not([type="radio"]),
+  .input-wrap input,
+  .search input,
+  .data-table-search input,
+  .data-table-toolbar .select,
+  .qz-input-label input,
+  .lp-feedback-form input:not([type="checkbox"]):not([type="radio"]),
+  .lp-feedback-form select,
+  .lp-feedback-form textarea,
+  .subject-field input:not([type="checkbox"]):not([type="radio"]),
+  .subject-field select,
+  .subject-field textarea,
+  .prof-panel .form input:not([type="checkbox"]):not([type="radio"]),
+  .wizard-step input:not([type="checkbox"]):not([type="radio"]),
+  .wizard-step select,
+  .wizard-step textarea {
+    font-size: 16px !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    touch-action: manipulation;
+  }
+
+  .form input:not([type="checkbox"]):not([type="radio"]),
+  .form select,
+  .field select,
+  .field input:not([type="checkbox"]):not([type="radio"]),
+  .subject-field input:not([type="checkbox"]):not([type="radio"]),
+  .subject-field select,
+  .subject-field textarea,
+  .lp-feedback-form input:not([type="checkbox"]):not([type="radio"]),
+  .lp-feedback-form select,
+  .lp-feedback-form textarea,
+  .wizard-step input:not([type="checkbox"]):not([type="radio"]),
+  .wizard-step select,
+  .wizard-step textarea {
+    width: 100% !important;
+    min-height: 42px;
+  }
+
+  /* Prevent flex/grid containers from stretching when input is clicked */
+  .input-wrap,
+  .search,
+  .data-table-search,
+  .form label,
+  .field,
+  .subject-field,
+  .wizard-step label {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .input-wrap input,
+  .search input,
+  .data-table-search input {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  /* Compact and stable focus glow that never overflows the container */
+  .input-wrap:focus-within,
+  .form input:focus,
+  .form select:focus,
+  .field select:focus,
+  .field input:focus,
+  .subject-field input:focus,
+  .subject-field select:focus,
+  .subject-field textarea:focus,
+  .prof-panel .form input:focus,
+  .lp-feedback-form input:focus,
+  .lp-feedback-form select:focus,
+  .lp-feedback-form textarea:focus,
+  .wizard-step input:focus,
+  .wizard-step select:focus,
+  .wizard-step textarea:focus {
+    box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.25) !important;
+    outline: none !important;
+    transform: none !important;
+  }
+}
+
 
